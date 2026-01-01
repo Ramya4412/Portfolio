@@ -38,18 +38,19 @@ window.addEventListener("load", () => {
         bar.style.width = bar.dataset.progress + "%";
     });
 
-    loadUsers(); // Load users from backend when page loads
+    loadUsers();
 });
 
 /* BACKEND INTEGRATION */
-// Form & Users list
 const form = document.getElementById('userForm');
 const userList = document.getElementById('userList');
 
-// Hide users list from UI
 if (userList) {
     userList.style.display = 'none';
 }
+
+// ✅ Render backend URL
+const API_BASE_URL = "https://portfolio-36ys.onrender.com";
 
 if (form) {
     form.addEventListener('submit', function(e) {
@@ -60,8 +61,7 @@ if (form) {
         const phone = document.getElementById('phone').value;
         const message = document.getElementById('message').value;
 
-        // Send data to backend
-        fetch('http://localhost:5000/api/users', {
+        fetch(`${API_BASE_URL}/api/users`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, phone, message })
@@ -69,19 +69,17 @@ if (form) {
         .then(res => res.json())
         .then(data => {
             console.log("User submitted:", data);
-            alert("Message sent successfully!"); // ✅ ADD HERE
-            loadUsers(); // Refresh backend users in background
+            alert("Message sent successfully!");
+            loadUsers();
         })
-
         .catch(err => console.error(err));
 
         form.reset();
     });
 }
 
-// Function to load users from backend (hidden from UI)
 function loadUsers() {
-    fetch('http://localhost:5000/api/users')
+    fetch(`${API_BASE_URL}/api/users`)
         .then(res => res.json())
         .then(users => {
             if (!userList) return;
