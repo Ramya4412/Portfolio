@@ -45,10 +45,6 @@ window.addEventListener("load", () => {
 const form = document.getElementById('userForm');
 const userList = document.getElementById('userList');
 
-if (userList) {
-    userList.style.display = 'none';
-}
-
 // ✅ Render backend URL
 const API_BASE_URL = "https://portfolio-ramya.onrender.com";
 
