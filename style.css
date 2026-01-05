@@ -472,29 +472,28 @@ body {
 footer {
   background: #0a0f1c;
   color: #ffffff;
-  padding: 60px 20px 40px;
+  padding: 60px 40px 30px;
   position: relative;
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
 }
 
+/* Footer Sections */
 .footer-section h2 {
   font-size: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #00f2ff;
 }
 
 .footer-section p {
   font-size: 15px;
-  color: #d1d5db;
-  margin-bottom: 10px;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  color: #cfd8dc;
 }
 
 /* Quick Links */
@@ -509,66 +508,76 @@ footer {
 
 .footer-section.links ul li a {
   text-decoration: none;
-  color: #d1d5db;
-  transition: color 0.3s ease;
+  color: #cfd8dc;
+  transition: 0.3s ease;
 }
 
 .footer-section.links ul li a:hover {
   color: #00f2ff;
+  padding-left: 6px;
 }
 
-/* ===== Social Icons ===== */
-.footer-social {
-  margin-top: 40px;
+/* ===== CONTACT INFO ICONS ===== */
+.contact-social {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 15px;
+  margin-top: 18px;
 }
 
-.footer-social a {
-  width: 45px;
-  height: 45px;
+.contact-social a {
+  width: 42px;
+  height: 42px;
   background: #ffffff;
+  color: #0a0f1c;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0a0f1c;
   font-size: 18px;
   transition: all 0.3s ease;
 }
 
-.footer-social a:hover {
+.contact-social a:hover {
   background: #00f2ff;
-  color: #ffffff;
-  transform: translateY(-5px);
+  color: #000;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
 }
 
-/* ===== Back To Top ===== */
+/* ===== BACK TO TOP BUTTON ===== */
 .back-to-top {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background: #00f2ff;
-  color: #0a0f1c;
+  color: #000;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-size: 20px;
+  transition: 0.3s ease;
   z-index: 1000;
 }
 
 .back-to-top:hover {
   background: #ffffff;
-  box-shadow: 0 0 20px rgba(0,242,255,0.6);
+  transform: translateY(-4px);
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+
+  .contact-social {
+    justify-content: center;
+  }
+}
 
 /* MOBILE */
 @media (max-width: 768px) {
